@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character
 {
-    class BaseSkills
+    public class BaseSkills
     {
         private int _charisma;
         private int _constitution;

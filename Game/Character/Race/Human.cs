@@ -7,7 +7,7 @@ using RPGViewer.Game.Character.Language;
 
 namespace RPGViewer.Game.Character.Race
 {
-    class Human : CharacterRace
+    public class Human : CharacterRace
     {
         public Human() : base("Human", new Common())
         {

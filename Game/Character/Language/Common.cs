@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character.Language
 {
-    class Common : CharacterLanguage
+    public class Common : CharacterLanguage
     {
 
     }

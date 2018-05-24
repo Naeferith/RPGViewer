@@ -33,8 +33,20 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Debug\ASCIIPrint.cs" />
+    <Compile Include="Game\Abilities\Ability.cs" />
+    <Compile Include="Game\Abilities\Buff.cs" />
+    <Compile Include="Game\Abilities\Range\AbilityRange.cs" />
+    <Compile Include="Game\Abilities\Range\Discharge.cs" />
+    <Compile Include="Game\Abilities\Range\IOrientable.cs" />
+    <Compile Include="Game\Abilities\Range\Shape\BoxShape.cs" />
+    <Compile Include="Game\Abilities\Range\Shape\CrossShape.cs" />
+    <Compile Include="Game\Abilities\Range\Shape\LineShape.cs" />
+    <Compile Include="Game\Abilities\Range\Shape\RangeShape.cs" />
     <Compile Include="Game\Character\BaseSkills.cs" />
     <Compile Include="Game\Character\Defence.cs" />
     <Compile Include="Game\Character\Language\CharacterLanguage.cs" />
@@ -45,9 +57,23 @@
     <Compile Include="Game\Character\Race\Human.cs" />
     <Compile Include="Game\Character\Race\CharacterRace.cs" />
     <Compile Include="Desktop\Application.cs" />
+    <Compile Include="Game\Effects\Effect.cs" />
+    <Compile Include="Game\Mathematics\DiceExpression.cs" />
     <Compile Include="Game\Player.cs" />
     <Compile Include="Game\Character\Traits.cs" />
+    <Compile Include="Game\Playfield\Cell.cs" />
+    <Compile Include="Game\Playfield\PlayGrid.cs" />
+    <Compile Include="Game\Playfield\Terrain\Ground.cs" />
+    <Compile Include="Game\Playfield\Terrain\Obstacle.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Game\Exceptions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.3.0.0\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

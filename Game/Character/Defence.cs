@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character
 {
-    class Defence
+    public class Defence
     {
         private int _armorClass;
         private int _reflexes;

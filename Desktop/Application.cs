@@ -1,6 +1,9 @@
-﻿using RPGViewer.Game;
+﻿using RPGViewer.Debug;
+using RPGViewer.Game;
 using RPGViewer.Game.Character;
 using RPGViewer.Game.Character.Race;
+using RPGViewer.Game.Mathematics;
+using RPGViewer.Game.Playfield;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +22,12 @@ namespace RPGViewer.Desktop
             PlayerCharacter WE = new PlayerCharacter("Wuihtentrein Eihset", new Human(), 174, 64, 180, de, 16, bs, tr);
             Player player = new Player("BA", WE);
 
-            Console.WriteLine(player.ToString());
+            //Console.WriteLine(Math.Max(0, -2));
 
+            PlayGrid play = PlayGrid.GetPlayGrid();
+            play.SetDimension(10, 10);
+
+            ASCIIPrint.DisplayPlayField();
             char a = Console.ReadKey(true).KeyChar;
         }
     }

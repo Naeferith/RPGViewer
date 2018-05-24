@@ -7,7 +7,7 @@ using RPGViewer.Game.Character.Race;
 
 namespace RPGViewer.Game.Character
 {
-    class Partner : Mob
+    public class Partner : Mob
     {
         private PlayerCharacter _master;
 

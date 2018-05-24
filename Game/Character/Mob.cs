@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character
 {
-    class Mob
+    public class Mob
     {
         /// <summary>
         /// Character name
@@ -44,6 +44,8 @@ namespace RPGViewer.Game.Character
         /// </summary>
         private int _initiative;
 
+        private List<int> _criticalValues;
+
         public Mob(string pseudo, CharacterRace race, int size, int weight, int hp, Defence defences, int initiative)
         {
             _pseudo = pseudo ?? throw new ArgumentNullException(nameof(pseudo));
@@ -53,6 +55,19 @@ namespace RPGViewer.Game.Character
             _hp = hp;
             _defences = defences ?? throw new ArgumentNullException(nameof(defences));
             _initiative = initiative;
+            _criticalValues = new List<int>() { 20 };
+        }
+
+        public Mob(string pseudo, CharacterRace race, int size, int weight, int hp, Defence defences, int initiative, List<int> crits)
+        {
+            _pseudo = pseudo ?? throw new ArgumentNullException(nameof(pseudo));
+            _race = race ?? throw new ArgumentNullException(nameof(race));
+            _size = size;
+            _weight = weight;
+            _hp = hp;
+            _defences = defences ?? throw new ArgumentNullException(nameof(defences));
+            _initiative = initiative;
+            _criticalValues = crits;
         }
 
         public override string ToString()

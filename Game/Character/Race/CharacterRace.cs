@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character.Race
 {
-    abstract class CharacterRace
+    public abstract class CharacterRace
     {
         /// <summary>
         /// Race name

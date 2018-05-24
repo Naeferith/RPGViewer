@@ -5,3 +5,7 @@ C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\obj\Debug\RPGViewer.csprojAsse
 C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\obj\Debug\RPGViewer.csproj.CoreCompileInputs.cache
 C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\obj\Debug\RPGViewer.exe
 C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\obj\Debug\RPGViewer.pdb
+C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\bin\Debug\OpenTK.dll
+C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\bin\Debug\OpenTK.pdb
+C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\bin\Debug\OpenTK.xml
+C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\obj\Debug\RPGViewer.csproj.CopyComplete

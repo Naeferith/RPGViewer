@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character
 {
-    class PlayerCharacter : Mob
+    public class PlayerCharacter : Mob
     {
 
         /// <summary>

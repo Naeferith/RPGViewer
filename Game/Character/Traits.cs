@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character
 {
-    class Traits
+    public class Traits
     {
         private int _agility;
         private int _arcane;
