@@ -1,0 +1,7 @@
+C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\bin\Debug\RPGViewer.exe.config
+C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\bin\Debug\RPGViewer.exe
+C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\bin\Debug\RPGViewer.pdb
+C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\obj\Debug\RPGViewer.csprojAssemblyReference.cache
+C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\obj\Debug\RPGViewer.csproj.CoreCompileInputs.cache
+C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\obj\Debug\RPGViewer.exe
+C:\Users\Thømas\source\repos\RPGViewer\RPGViewer\obj\Debug\RPGViewer.pdb
