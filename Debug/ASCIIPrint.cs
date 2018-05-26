@@ -30,5 +30,6 @@ namespace RPGViewer.Debug
             }
             Console.WriteLine('+' + new String('-', X * 2 - 1) + '+');
         }
+        
     }
 }

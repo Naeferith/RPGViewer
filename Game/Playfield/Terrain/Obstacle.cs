@@ -7,9 +7,9 @@ using RPGViewer.Game.Effects;
 
 namespace RPGViewer.Game.Playfield.Terrain
 {
-    class Obstacle : Ground
+    public abstract class Obstacle : Ground
     {
-        public Obstacle() : base(new List<Effect>(), 0)
+        public Obstacle(List<Effect> effects) : base(effects, 0)
         {
         }
     }

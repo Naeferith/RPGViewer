@@ -1,4 +1,5 @@
-﻿using RPGViewer.Game.Effects;
+﻿using RPGViewer.Game.Abilities.Range;
+using RPGViewer.Game.Effects;
 using RPGViewer.Game.Mathematics;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,18 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Abilities
 {
-    abstract class Ability
+    /// <summary>
+    /// Represent a move usable on a fight.
+    /// </summary>
+    public abstract class Ability
     {
         /// <summary>
         /// The <see cref="Scope"/> on the Ability
+        /// </summary>
+        private Avaliability _avaliability;
+
+        /// <summary>
+        /// The range of the skill.
         /// </summary>
         private Scope _scope;
 
@@ -27,31 +36,31 @@ namespace RPGViewer.Game.Abilities
         /// </summary>
         private List<Effect> _effects;
 
-        protected Ability(Scope scope)
-        {
-            _scope = scope;
-            _de = new DiceExpression();
-            _effects = new List<Effect>();
-        }
+        /// <summary>
+        /// Tells if the <see cref="Ability"/> can be avoided or not.
+        /// </summary>
+        private bool _isAvoidable;
 
-        protected Ability(Scope scope, DiceExpression de, List<Effect> le)
+        protected Ability(Avaliability avaliability, Scope scope, DiceExpression de, List<Effect> le, bool isAvoidable)
         {
-            _scope = scope;
+            _avaliability = avaliability;
             _de = de;
             _effects = le;
+            _isAvoidable = isAvoidable;
+            _scope = scope;
         }
 
         /// <summary>
         /// Defines the level of avaliability of an Ability.
-        /// WILL have no restrictions on the usage.
-        /// MEETING ability can be used once per fight.
-        /// DAILY is once a day
+        /// Will have no restrictions on the usage.
+        /// Meeting ability can be used once per fight.
+        /// Daily is once a day.
         /// </summary>
-        public enum Scope
+        public enum Avaliability
         {
-            WILL,
-            MEETING,
-            DAILY
+            Will,
+            Meeting,
+            Daily
         } 
     }
 }

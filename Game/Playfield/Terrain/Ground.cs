@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Playfield.Terrain
 {
-    class Ground
+    public class Ground
     {
         /// <summary>
         /// List of <see cref="Effect"/> due to AOE Abilities and/or environement bahvior.

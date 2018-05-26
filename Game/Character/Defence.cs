@@ -25,5 +25,13 @@ namespace RPGViewer.Game.Character
             _vigor = vigor;
             _will = will;
         }
+
+        public override string ToString()
+        {
+            return "Resistances  \n> CA        : " + _armorClass +
+                                "\n> Reflexes  : " + _reflexes +
+                                "\n> Vigor     : " + _vigor +
+                                "\n> Will      : " + _will;
+        }
     }
 }

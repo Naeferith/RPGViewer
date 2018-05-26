@@ -1,4 +1,5 @@
-﻿using RPGViewer.Game.Effects;
+﻿using RPGViewer.Game.Abilities.Range;
+using RPGViewer.Game.Effects;
 using RPGViewer.Game.Mathematics;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Abilities
 {
-    abstract class Buff : Ability
+    public abstract class Buff : Ability
     {
-        protected Buff(Scope scope, List<Effect> le) : base(scope, new DiceExpression(), le)
+        protected Buff(Avaliability avaliability, Scope scope, List<Effect> le) : base(avaliability, scope, new DiceExpression(), le, false)
         {
         }
     }

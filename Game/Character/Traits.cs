@@ -64,5 +64,26 @@ namespace RPGViewer.Game.Character
             this._stamina      = sta;
             this._street_knowledge = skn;
         }
+
+        public override string ToString()
+        {
+            return  "Traits :\n> Agility      : " + _agility +
+                            "\n> Arcane       : " + _arcane +
+                            "\n> Athletism    : " + _athletism +
+                            "\n> Bluff        : " + _bluff +
+                            "\n> Diplomacy    : " + _diplomacy +
+                            "\n> Discretion   : " + _discretion +
+                            "\n> Exploration  : " + _exploration +
+                            "\n> Heal         : " + _heal +
+                            "\n> History      : " + _history +
+                            "\n> Intimidation : " + _intimidation +
+                            "\n> Intuition    : " + _intuition +
+                            "\n> Larceny      : " + _larceny +
+                            "\n> Nature       : " + _nature +
+                            "\n> Perception   : " + _perception +
+                            "\n> Religion     : " + _religion +
+                            "\n> Stamina      : " + _stamina +
+                            "\n> Street Knowledge : " + _street_knowledge;
+        }
     }
 }

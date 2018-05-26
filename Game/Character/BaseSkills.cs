@@ -31,5 +31,15 @@ namespace RPGViewer.Game.Character
             _spirit       = spirit;
             _strength     = strength;
         }
+
+        public override string ToString()
+        {
+            return "Base Stats   \n> Charisma     : " + _charisma +
+                                "\n> Constitution : " + _constitution +
+                                "\n> Dexterity    : " + _dexterity +
+                                "\n> Intelligence : " + _intelligence +
+                                "\n> Spirit       : " + _spirit +
+                                "\n> Strength     : " + _strength;
+        }
     }
 }

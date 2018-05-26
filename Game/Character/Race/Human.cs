@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RPGViewer.Game.Character.Language;
+using RPGViewer.Game.Character.Languages;
 
 namespace RPGViewer.Game.Character.Race
 {

@@ -40,17 +40,24 @@
     <Compile Include="Debug\ASCIIPrint.cs" />
     <Compile Include="Game\Abilities\Ability.cs" />
     <Compile Include="Game\Abilities\Buff.cs" />
-    <Compile Include="Game\Abilities\Range\AbilityRange.cs" />
+    <Compile Include="Game\Abilities\Range\Scope.cs" />
     <Compile Include="Game\Abilities\Range\Discharge.cs" />
-    <Compile Include="Game\Abilities\Range\IOrientable.cs" />
+    <Compile Include="Game\Character\ILevelable.cs" />
+    <Compile Include="Game\Character\LevelableEventArgs.cs" />
+    <Compile Include="Game\Effects\Absobtion.cs" />
+    <Compile Include="Game\Effects\DamageReduction.cs" />
+    <Compile Include="Game\Effects\EffectEventArgs.cs" />
+    <Compile Include="Game\Effects\IEffect.cs" />
+    <Compile Include="Game\Effects\Regeneration.cs" />
+    <Compile Include="Game\IOrientable.cs" />
     <Compile Include="Game\Abilities\Range\Shape\BoxShape.cs" />
     <Compile Include="Game\Abilities\Range\Shape\CrossShape.cs" />
     <Compile Include="Game\Abilities\Range\Shape\LineShape.cs" />
     <Compile Include="Game\Abilities\Range\Shape\RangeShape.cs" />
     <Compile Include="Game\Character\BaseSkills.cs" />
     <Compile Include="Game\Character\Defence.cs" />
-    <Compile Include="Game\Character\Language\CharacterLanguage.cs" />
-    <Compile Include="Game\Character\Language\Common.cs" />
+    <Compile Include="Game\Character\Languages\Language.cs" />
+    <Compile Include="Game\Character\Languages\Common.cs" />
     <Compile Include="Game\Character\Mob.cs" />
     <Compile Include="Game\Character\Partner.cs" />
     <Compile Include="Game\Character\PlayerCharacter.cs" />
@@ -58,6 +65,19 @@
     <Compile Include="Game\Character\Race\CharacterRace.cs" />
     <Compile Include="Desktop\Application.cs" />
     <Compile Include="Game\Effects\Effect.cs" />
+    <Compile Include="Game\Items\Equipments\Armor.cs" />
+    <Compile Include="Game\Items\Equipments\ArmorEquipment.cs" />
+    <Compile Include="Game\Items\Equipments\Boot.cs" />
+    <Compile Include="Game\Items\Equipments\Equipment.cs" />
+    <Compile Include="Game\Items\Equipments\Glove.cs" />
+    <Compile Include="Game\Items\Equipments\Pants.cs" />
+    <Compile Include="Game\Items\Equipments\Ring.cs" />
+    <Compile Include="Game\Items\Equipments\Helmet.cs" />
+    <Compile Include="Game\Items\Equipments\IEquipable.cs" />
+    <Compile Include="Game\Items\Equipments\Scarf.cs" />
+    <Compile Include="Game\Items\Equipments\Weapon.cs" />
+    <Compile Include="Game\Items\IStackable.cs" />
+    <Compile Include="Game\Items\Item.cs" />
     <Compile Include="Game\Mathematics\DiceExpression.cs" />
     <Compile Include="Game\Player.cs" />
     <Compile Include="Game\Character\Traits.cs" />
@@ -68,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Game\Exceptions\" />
+    <Folder Include="Game\Items\Gatherable\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">

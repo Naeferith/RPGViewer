@@ -7,7 +7,7 @@ using RPGViewer.Game.Abilities.Range.Shape;
 
 namespace RPGViewer.Game.Abilities.Range
 {
-    public class Discharge : AbilityRange, IOrientable
+    public class Discharge : Scope, IOrientable
     {
         private Orientation _orientation;
 

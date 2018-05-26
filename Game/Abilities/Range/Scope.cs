@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Abilities.Range
 {
-    public abstract class AbilityRange
+    public abstract class Scope
     {
         /// <summary>
         /// The maximal distance from the <see cref="Character.Mob"/> expressed in number of cases
@@ -19,18 +19,10 @@ namespace RPGViewer.Game.Abilities.Range
         /// </summary>
         private RangeShape _areaOfEffect;
 
-        protected AbilityRange(int distance, RangeShape areaOfEffect)
+        protected Scope(int distance, RangeShape areaOfEffect)
         {
             _distance = distance;
             _areaOfEffect = areaOfEffect ?? throw new ArgumentNullException(nameof(areaOfEffect));
-        }
-
-        public enum Orientation
-        {
-            North,
-            South,
-            East,
-            West
         }
     }
 }

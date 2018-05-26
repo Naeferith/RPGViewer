@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGViewer.Game.Character.Language
+namespace RPGViewer.Game.Character.Languages
 {
-    public abstract class CharacterLanguage
+    public class Common : Language
     {
 
     }

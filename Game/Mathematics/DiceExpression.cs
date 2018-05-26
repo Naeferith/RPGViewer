@@ -12,7 +12,7 @@ namespace RPGViewer.Game.Mathematics
     /// A dice expression contains a certain amount of dices and a bonus. 
     /// The dice combinaisons or bonus can be null (e.g. Buff)
     /// </summary>
-    class DiceExpression
+    public class DiceExpression
     {
         /// <summary>
         /// The dice combinaison itself.

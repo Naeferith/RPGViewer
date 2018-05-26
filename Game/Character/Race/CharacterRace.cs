@@ -1,4 +1,4 @@
-﻿using RPGViewer.Game.Character.Language;
+﻿using RPGViewer.Game.Character.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +17,9 @@ namespace RPGViewer.Game.Character.Race
         /// <summary>
         /// Native Language of the Race
         /// </summary>
-        public readonly CharacterLanguage NATIVE_LANGUAGE;
+        public readonly Language NATIVE_LANGUAGE;
 
-        protected CharacterRace(string name, CharacterLanguage language)
+        protected CharacterRace(string name, Language language)
         {
             _name = name;
             NATIVE_LANGUAGE = language;
