@@ -80,15 +80,11 @@ namespace RPGViewer.Game.Character
             }
 
         }
-
-        public event EventHandler LevelChanged;
-
+        
         public virtual void OnLevelChanged(LevelableEventArgs e)
         {
-            if (LevelChanged != null)
-            {
-                Level++;
-            }
+            Level++;
+            //Do Stuff
         }
 
         public override string ToString()

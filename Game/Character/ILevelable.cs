@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character
 {
-    public interface ILevelable
+    public interface ILevelable : IHasLevel
     {
         /// <summary>
-        /// Raises when <see cref="ILevelable"/>'s <see cref="Experience"/> reaches <see cref="TotalExperience"/>.
-        /// </summary>
-        event EventHandler LevelChanged;
-
-        /// <summary>
-        /// Called when <see cref="LevelChanged"/> is raised.
+        /// Called when a <see cref="ILevelable"/> reaches his <see cref="TotalExperience"/>.
         /// </summary>
         /// <param name="e"></param>
         void OnLevelChanged(LevelableEventArgs e);

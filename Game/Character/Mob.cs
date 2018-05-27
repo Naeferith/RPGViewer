@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character
 {
-    public class Mob : IOrientable
+    public class Mob : IOrientable, IHasLevel
     {
         /// <summary>
         /// Character name

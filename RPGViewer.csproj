@@ -42,6 +42,7 @@
     <Compile Include="Game\Abilities\Buff.cs" />
     <Compile Include="Game\Abilities\Range\Scope.cs" />
     <Compile Include="Game\Abilities\Range\Discharge.cs" />
+    <Compile Include="Game\Character\IHasLevel.cs" />
     <Compile Include="Game\Character\ILevelable.cs" />
     <Compile Include="Game\Character\LevelableEventArgs.cs" />
     <Compile Include="Game\Effects\Absobtion.cs" />
