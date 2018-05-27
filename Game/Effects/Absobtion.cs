@@ -25,14 +25,14 @@ namespace RPGViewer.Game.Effects
         
         public override void OnTurnStarted(EffectEventArgs e) {}
 
-        public override void OnTargetReached(EffectEventArgs e)
+        public override EffectEventArgs OnTargetReached(EffectEventArgs e)
         {
             if (TargetReached != null)
             {
                 if (e.Damage > _value) e.Damage -= (int) _value;
                 else _value -= e.Damage;
             }
-            
+            return e;
         }
 
         public override void OnTargetMissed(EffectEventArgs e) {}

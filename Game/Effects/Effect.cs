@@ -22,7 +22,7 @@ namespace RPGViewer.Game.Effects
                 if (_nbTurn == 0) { /*Remove event from Caster evetlist*/}
             }
         }
-        public abstract void OnTargetReached(EffectEventArgs e);
+        public virtual EffectEventArgs OnTargetReached(EffectEventArgs e) => e;
         public abstract void OnTargetMissed(EffectEventArgs e);
 
         /// <summary>

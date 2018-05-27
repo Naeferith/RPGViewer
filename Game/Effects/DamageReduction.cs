@@ -23,12 +23,13 @@ namespace RPGViewer.Game.Effects
 
         public override void OnTargetMissed(EffectEventArgs e) {}
 
-        public override void OnTargetReached(EffectEventArgs e)
+        public override EffectEventArgs OnTargetReached(EffectEventArgs e)
         {
             if (TargetReached != null)
             {
                 e.Damage = (int)Math.Ceiling(e.Damage * (1 - _value)); 
             }
+            return e;
         }
 
         public override void OnTurnStarted(EffectEventArgs e)

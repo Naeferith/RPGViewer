@@ -21,9 +21,7 @@ namespace RPGViewer.Game.Effects
         public override event EventHandler TargetMissed;
 
         public override void OnTargetMissed(EffectEventArgs e) {}
-
-        public override void OnTargetReached(EffectEventArgs e) {}
-
+        
         public override void OnTurnStarted(EffectEventArgs e)
         {
             e.Caster.Health += (int)_value;
