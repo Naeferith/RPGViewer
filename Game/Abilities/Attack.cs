@@ -15,10 +15,14 @@ namespace RPGViewer.Game.Abilities
         private int _diceBonus;
         private Defences _targetDefence;
 
-        public Attack(string label, string description, Avaliability avaliability, Scope scope, DiceExpression de, int diceBonus, Defences defence, List<Effect> le, bool isAvoidable) : base(label, description, avaliability, scope, de, le, isAvoidable)
+        public Attack(string label, string description, Avaliability avaliability, Scope scope, DiceExpression de, List<Effect> le, int diceBonus, Defences defence) : base(label, description, avaliability, scope, de, le, true)
         {
             _diceBonus = diceBonus;
             _targetDefence = defence;
+        }
+
+        public Attack(string label, string description, Avaliability avaliability, Scope scope, DiceExpression de, List<Effect> le) : base(label, description, avaliability, scope, de, le, false)
+        {
         }
 
         public override string ToString()

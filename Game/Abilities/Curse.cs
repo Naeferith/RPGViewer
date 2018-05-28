@@ -12,7 +12,17 @@ namespace RPGViewer.Game.Abilities
 {
     public class Curse : Attack
     {
-        public Curse(string label, string description, Avaliability avaliability, Scope scope, int diceBonus, Defences defence, List<Effect> le, bool isAvoidable) : base(label, description, avaliability, scope, new DiceExpression(), diceBonus, defence, le, isAvoidable)
+        /// <summary>
+        /// Constructor for avoidable <see cref="Curse"/>
+        /// </summary>
+        public Curse(string label, string description, Avaliability avaliability, Scope scope, int diceBonus, Defences defence, List<Effect> le) : base(label, description, avaliability, scope, new DiceExpression(), le, diceBonus, defence)
+        {
+        }
+
+        /// <summary>
+        /// Constructor for unavoidable <see cref="Curse"/>
+        /// </summary>
+        public Curse(string label, string description, Avaliability avaliability, Scope scope, List<Effect> le) : base(label, description, avaliability, scope, new DiceExpression(), le)
         {
         }
     }
