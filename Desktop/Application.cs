@@ -29,7 +29,7 @@ namespace RPGViewer.Desktop
             PlayerCharacter WE = new PlayerCharacter("Wuihtentrein Eihset", new Human(), 174, 64, 180, de, 16, 18, bs, tr);
             Player player = new Player("BA", WE);
 
-            Ability ability = new Attack("Furie Brisefer", "Attaque pour KS", Ability.Avaliability.Meeting, new Melee(), new DiceExpression(4, 12, 8), null);
+            Ability ability = new Attack("Furie Brisefer", "Attaque pour KS", Ability.Avaliability.Meeting, new Melee(), new DiceExpression(12, 4, 8), null);
 
 
 

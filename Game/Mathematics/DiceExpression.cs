@@ -19,7 +19,7 @@ namespace RPGViewer.Game.Mathematics
         /// The key represent the dice.
         /// The Value represent the number of dices.
         /// </summary>
-        private Dictionary<int, int> _diceCombinaisons = new Dictionary<int, int>();
+        private Dictionary<Dices, int> _diceCombinaisons = new Dictionary<Dices, int>();
 
         /// <summary>
         /// Additional value of the expression.
@@ -27,12 +27,16 @@ namespace RPGViewer.Game.Mathematics
         private int _bonus;
 
         /// <summary>
-        /// Unique constructor for <see cref="DiceExpression"/>.
+        /// Construc a <see cref="DiceExpression"/> based on the common <see cref="Dices"/> used in T-RPG
         /// </summary>
         /// <param name="list">By pair of element, represent the dice then the quantity. You can add a bonus value at the very end.</param>
         public DiceExpression(params int[] list)
         {
-            for (int i = 0; i < list.Length / 2; i+=2) _diceCombinaisons.Add(list[i], list[i + 1]);
+            for (int i = 0; i < list.Length / 2; i += 2)
+            {
+                if (!Enum.IsDefined(typeof(Dices), list[i])) throw new ArgumentException(nameof(list));
+                _diceCombinaisons.Add((Dices)list[i], list[i + 1]);
+            }
 
             //If the number of given arguments is even, we assume the bonus null
             _bonus = (list.Length % 2 == 0) ? 0 : list.Last();
@@ -46,8 +50,8 @@ namespace RPGViewer.Game.Mathematics
         {
             for (int i = 0; i < list.Length / 2; i += 2)
             {
-                if (_diceCombinaisons.ContainsKey(list[i])) _diceCombinaisons[list[i]] = Math.Max(0, _diceCombinaisons[list[i]] + list[i + 1]);
-                else _diceCombinaisons.Add(list[i], list[i + 1]);
+                if (_diceCombinaisons.ContainsKey((Dices)list[i])) _diceCombinaisons[(Dices)list[i]] = Math.Max(0, _diceCombinaisons[(Dices)list[i]] + list[i + 1]);
+                else _diceCombinaisons.Add((Dices)list[i], list[i + 1]);
             }
             _bonus = (list.Length % 2 == 0) ? _bonus : Math.Max(0, _bonus + list.Last());
         }
@@ -60,9 +64,9 @@ namespace RPGViewer.Game.Mathematics
         {
             Random rnd = new Random();
             int sum = 0;
-            foreach (KeyValuePair<int, int> entry in _diceCombinaisons)
+            foreach (KeyValuePair<Dices, int> entry in _diceCombinaisons)
             {
-                for (int i = 1; i <= entry.Value; i++) sum += (rnd.Next(1, entry.Key + 1));
+                for (int i = 1; i <= entry.Value; i++) sum += (rnd.Next(1, (int)entry.Key + 1));
             }
             return sum + _bonus;
         }
@@ -74,18 +78,29 @@ namespace RPGViewer.Game.Mathematics
         public int Max()
         {
             int sum = 0;
-            foreach (KeyValuePair<int, int> entry in _diceCombinaisons) sum += (entry.Key * entry.Value);
+            foreach (KeyValuePair<Dices, int> entry in _diceCombinaisons) sum += ((int)entry.Key * entry.Value);
             return sum + _bonus;
         }
 
         public override string ToString()
         {
             string buffer = "";
-            foreach (KeyValuePair<int, int> entry in _diceCombinaisons)
+            foreach (KeyValuePair<Dices, int> entry in _diceCombinaisons)
             {
-                buffer += entry.Value + "d" + entry.Key + ", ";
+                buffer += entry.Value + "d" + (int)entry.Key + ", ";
             }
             return (_bonus == 0) ? buffer : buffer + "+ " + _bonus;
         }
+    }
+
+    public enum Dices
+    {
+        Four    = 4,
+        Six     = 6,
+        Eight   = 8,
+        Ten     = 10,
+        Twelve  = 12,
+        Twenty  = 20,
+        Hendred = 100,
     }
 }
