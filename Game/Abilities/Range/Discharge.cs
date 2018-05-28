@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RPGViewer.Game.Abilities.Range.Shape;
+using RPGViewer.Game.Abilities.Range.Shapes;
 
 namespace RPGViewer.Game.Abilities.Range
 {
@@ -13,7 +13,7 @@ namespace RPGViewer.Game.Abilities.Range
 
         public Orientation Orientation { get { return _orientation; } set { _orientation = value; } }
 
-        public Discharge(int radius) : base(0, new BoxShape(radius))
+        public Discharge(int radius) : base(0, new Box(radius))
         {
         }
 

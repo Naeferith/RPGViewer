@@ -14,6 +14,8 @@ namespace RPGViewer.Game.Abilities
     /// </summary>
     public abstract class Ability
     {
+        private string _label;
+        private string _description;
         /// <summary>
         /// The <see cref="Scope"/> on the Ability
         /// </summary>
@@ -36,18 +38,28 @@ namespace RPGViewer.Game.Abilities
         /// </summary>
         private List<Effect> _effects;
 
+
+        //private Defence
+
         /// <summary>
         /// Tells if the <see cref="Ability"/> can be avoided or not.
         /// </summary>
-        private bool _isAvoidable;
+        protected bool _isAvoidable;
 
-        protected Ability(Avaliability avaliability, Scope scope, DiceExpression de, List<Effect> le, bool isAvoidable)
+        protected Ability(string label, string description, Avaliability avaliability, Scope scope, DiceExpression de, List<Effect> le, bool isAvoidable)
         {
+            _label = label;
+            _description = description;
             _avaliability = avaliability;
             _de = de;
             _effects = le;
             _isAvoidable = isAvoidable;
             _scope = scope;
+        }
+
+        public override string ToString()
+        {
+            return '[' + _avaliability.ToString() + "] " + _label + ": " + _description + " | " + _scope.ToString() + " | " + _de.ToString();
         }
 
         /// <summary>

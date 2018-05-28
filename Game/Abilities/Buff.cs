@@ -11,7 +11,7 @@ namespace RPGViewer.Game.Abilities
 {
     public abstract class Buff : Ability
     {
-        protected Buff(Avaliability avaliability, Scope scope, List<Effect> le) : base(avaliability, scope, new DiceExpression(), le, false)
+        protected Buff(string label, string description, Avaliability avaliability, Scope scope, List<Effect> le) : base(label, description, avaliability, scope, new DiceExpression(), le, false)
         {
         }
     }

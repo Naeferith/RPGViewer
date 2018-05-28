@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character
 {
-    public class Traits
+    public class Traits : IMutable<Traits>
     {
         private int _agility;
         private int _arcane;
@@ -26,43 +26,43 @@ namespace RPGViewer.Game.Character
         private int _stamina;
         private int _street_knowledge;
 
-        public int Agility { get { return _agility; } set { _agility = value; } }
-        public int Arcane { get { return _arcane; } set { _arcane = value; } }
-        public int Athletism { get { return _athletism; } set { _athletism = value; } }
-        public int Bluff { get { return _bluff; } set { _bluff = value; } }
-        public int Diplomacy { get { return _diplomacy; } set { _diplomacy = value; } }
-        public int Discretion { get { return _discretion; } set { _discretion = value; } }
-        public int Exploration { get { return _exploration; } set { _exploration = value; } }
-        public int Heal { get { return _heal; } set { _heal = value; } }
-        public int History { get { return _history; } set { _history = value; } }
-        public int Intimidation { get { return _intimidation; } set { _intimidation = value; } }
-        public int Intuition { get { return _intuition; } set { _intuition = value; } }
-        public int Larceny { get { return _larceny; } set { _larceny = value; } }
-        public int Nature { get { return _nature; } set { _nature = value; } }
-        public int Perception { get { return _perception; } set { _perception = value; } }
-        public int Religion { get { return _religion; } set { _religion = value; } }
-        public int Stamina { get { return _stamina; } set { _stamina = value; } }
-        public int Street_knowledge { get { return _street_knowledge; } set { _street_knowledge = value; } }
+        public int Agility { get { return _agility; } }
+        public int Arcane { get { return _arcane; } }
+        public int Athletism { get { return _athletism; } }
+        public int Bluff { get { return _bluff; } }
+        public int Diplomacy { get { return _diplomacy; } }
+        public int Discretion { get { return _discretion; } }
+        public int Exploration { get { return _exploration; } }
+        public int Heal { get { return _heal; } }
+        public int History { get { return _history; } }
+        public int Intimidation { get { return _intimidation; } }
+        public int Intuition { get { return _intuition; } }
+        public int Larceny { get { return _larceny; } }
+        public int Nature { get { return _nature; } }
+        public int Perception { get { return _perception; } }
+        public int Religion { get { return _religion; } }
+        public int Stamina { get { return _stamina; } }
+        public int Street_knowledge { get { return _street_knowledge; } }
 
         public Traits(int agi, int arc, int ath, int blu, int dip, int dis, int exp, int hea, int his, int inti, int intu, int lar, int nat, int per, int rel, int sta, int skn)
         {
-            this._agility      = agi;
-            this._arcane       = arc;
-            this._athletism    = ath;
-            this._bluff        = blu;
-            this._diplomacy    = dip;
-            this._discretion   = dis;
-            this._exploration  = exp;
-            this._heal         = hea;
-            this._history      = his;
-            this._intimidation = inti;
-            this._intuition    = intu;
-            this._larceny      = lar;
-            this._nature       = nat;
-            this._perception   = per;
-            this._religion     = rel;
-            this._stamina      = sta;
-            this._street_knowledge = skn;
+            _agility      = agi;
+            _arcane       = arc;
+            _athletism    = ath;
+            _bluff        = blu;
+            _diplomacy    = dip;
+            _discretion   = dis;
+            _exploration  = exp;
+            _heal         = hea;
+            _history      = his;
+            _intimidation = inti;
+            _intuition    = intu;
+            _larceny      = lar;
+            _nature       = nat;
+            _perception   = per;
+            _religion     = rel;
+            _stamina      = sta;
+            _street_knowledge = skn;
         }
 
         public override string ToString()
@@ -84,6 +84,27 @@ namespace RPGViewer.Game.Character
                             "\n> Religion     : " + _religion +
                             "\n> Stamina      : " + _stamina +
                             "\n> Street Knowledge : " + _street_knowledge;
+        }
+
+        public void Edit(Traits deltaObject)
+        {
+            _agility      += deltaObject._agility;
+            _arcane       += deltaObject._arcane;
+            _athletism    += deltaObject._athletism;
+            _bluff        += deltaObject._bluff;
+            _diplomacy    += deltaObject._diplomacy;
+            _discretion   += deltaObject._discretion;
+            _exploration  += deltaObject._exploration;
+            _heal         += deltaObject._heal;
+            _history      += deltaObject._history;
+            _intimidation += deltaObject._intimidation;
+            _intuition    += deltaObject._intuition;
+            _larceny      += deltaObject._larceny;
+            _nature       += deltaObject._nature;
+            _perception   += deltaObject._perception;
+            _religion     += deltaObject._religion;
+            _stamina      += deltaObject._stamina;
+            _street_knowledge += deltaObject._street_knowledge;
         }
     }
 }

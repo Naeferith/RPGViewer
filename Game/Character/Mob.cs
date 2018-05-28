@@ -1,4 +1,5 @@
 ﻿using RPGViewer.Game;
+using RPGViewer.Game.Abilities;
 using RPGViewer.Game.Abilities.Range;
 using RPGViewer.Game.Character.Race;
 using RPGViewer.Game.Effects;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character
 {
-    public class Mob : IOrientable, IHasLevel
+    public class Mob : IOrientable, IHasLevel, IMutable<Dictionary<Defences, int>>
     {
         /// <summary>
         /// Character name
@@ -34,16 +35,9 @@ namespace RPGViewer.Game.Character
 
         private int _level;
         private int _baseHp;
-
-        /// <summary>
-        /// Health points
-        /// </summary>
         private int _hp;
 
-        /// <summary>
-        /// Defence stats
-        /// </summary>
-        private Defence _defences;
+        private Dictionary<Defences, int> _defences;
 
         /// <summary>
         /// Character bonus initiative
@@ -56,6 +50,14 @@ namespace RPGViewer.Game.Character
         /// List of effects applied on the character.
         /// </summary>
         private List<Effect> _effects;
+
+
+        private List<Ability> _abilities;
+
+        /// <summary>
+        /// Defence stats
+        /// </summary>
+        public Dictionary<Defences, int> DefenceStats { get => _defences; set { _defences = value; } }
 
         /// <summary>
         /// The curent health of this character.
@@ -80,30 +82,27 @@ namespace RPGViewer.Game.Character
         /// </summary>
         public int Level { get => _level; set { _level = value; } }
 
-        public Mob(string pseudo, CharacterRace race, int size, int weight, int hp, Defence defences, int initiative, int level)
+        public Mob(string pseudo, CharacterRace race, int size, int weight, int hp, Dictionary<Defences, int> defences, int initiative, int level, List<Ability> abilities = null, List<int> crits = null)
         {
+            _abilities = (abilities == null) ? new List<Ability>() : abilities;
             _pseudo = pseudo ?? throw new ArgumentNullException(nameof(pseudo));
             _race = race ?? throw new ArgumentNullException(nameof(race));
             _size = size;
             _weight = weight;
             _baseHp = _hp = hp;
-            _defences = defences ?? throw new ArgumentNullException(nameof(defences));
-            _initiative = initiative;
-            _level = level;
-            _criticalValues = new List<int>() { 20 };
-        }
 
-        public Mob(string pseudo, CharacterRace race, int size, int weight, int hp, Defence defences, int initiative, int level, List<int> crits)
-        {
-            _pseudo = pseudo ?? throw new ArgumentNullException(nameof(pseudo));
-            _race = race ?? throw new ArgumentNullException(nameof(race));
-            _size = size;
-            _weight = weight;
-            _baseHp = _hp = hp;
-            _defences = defences ?? throw new ArgumentNullException(nameof(defences));
+            _defences = new Dictionary<Defences, int> {
+                {Defences.ArmorClass , 0},
+                {Defences.Reflexes , 0},
+                {Defences.Vigor , 0},
+                {Defences.Will , 0},
+            };
+            Edit(defences);
+
             _initiative = initiative;
             _level = level;
-            _criticalValues = crits;
+            _effects = new List<Effect>();
+            _criticalValues = (crits == null) ? new List<int>() { 20 } : crits;
         }
 
         public Orientation Orientation { get; set; }
@@ -112,5 +111,25 @@ namespace RPGViewer.Game.Character
         {
             return "[" + _pseudo + " (" + _race.ToString() + ")]\n" + _defences.ToString();
         }
+
+        public void Edit(Dictionary<Defences, int> deltaObject)
+        {
+            if (deltaObject == null) throw new ArgumentNullException(nameof(deltaObject));
+            foreach (Defences entry in Enum.GetValues(typeof(Defences)))
+            {
+                int value;
+                deltaObject.TryGetValue(entry, out value);
+                _defences[entry] += value;
+            }
+        }
+
+        
+    }
+    public enum Defences
+    {
+        ArmorClass,
+        Reflexes,
+        Vigor,
+        Will
     }
 }

@@ -13,11 +13,11 @@ namespace RPGViewer.Game
         
     }
 
-    public enum Orientation
+    public enum Orientation : byte
     {
-        North,
-        South,
-        East,
-        West
+        North = 0b00,
+        East  = 0b01,
+        West  = 0b10,
+        South = 0b11
     }
 }

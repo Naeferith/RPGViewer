@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGViewer.Game.Abilities.Range.Shape
+namespace RPGViewer.Game.Character
 {
-    public class LineShape
+    interface IMutable<T>
     {
+        void Edit(T deltaObject);
     }
 }

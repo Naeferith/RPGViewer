@@ -24,7 +24,8 @@ namespace RPGViewer.Debug
                 Console.WriteLine('+' + new String('-', X * 2 - 1) + '+');
                 for (int j = 0; j < X; j++)
                 {
-                    buffer += " |";
+                    char actor = (p.Grid[i, j].Actor == null) ? ' ' : 'M';
+                    buffer += actor + "|";
                 }
                 Console.WriteLine(buffer);
             }

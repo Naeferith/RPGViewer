@@ -39,21 +39,12 @@ namespace RPGViewer.Game.Character
         /// </summary>
         private List<Equipment> _equimpentSet;
 
-        public PlayerCharacter(string pseudo, CharacterRace race, int size, int weight, int hp, Defence defences, int initiative, int level, BaseSkills bs, Traits tra) : base(pseudo, race, size, weight, hp, defences, initiative, level)
+        public PlayerCharacter(string pseudo, CharacterRace race, int size, int weight, int hp, Dictionary<Defences, int> defences, int initiative, int level, BaseSkills bs, Traits tra, List<Language> lang = null, List<Partner> part = null) : base(pseudo, race, size, weight, hp, defences, initiative, level)
         {
             _baseSkills = bs;
             _traits = tra;
-            _languages = new List<Language>() { race.NATIVE_LANGUAGE };
-            _partners = new List<Partner>();
-
-        }
-
-        public PlayerCharacter(string pseudo, CharacterRace race, int size, int weight, int hp, Defence defences, int initiative, int level, BaseSkills bs, Traits tra, List<Language> lang, List<Partner> part) : base(pseudo, race, size, weight, hp, defences, initiative, level)
-        {
-            _baseSkills = bs;
-            _traits = tra;
-            _languages = lang;
-            _partners = part;
+            _languages = (lang == null) ? new List<Language> { race.NATIVE_LANGUAGE } : lang;
+            _partners = (part == null) ? new List<Partner>() : part;
         }
 
         public bool CanUnderstand(Language language)

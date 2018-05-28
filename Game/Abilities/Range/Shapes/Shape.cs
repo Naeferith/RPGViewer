@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGViewer.Game.Abilities.Range.Shape
+namespace RPGViewer.Game.Abilities.Range.Shapes
 {
-    public abstract class RangeShape
+    public abstract class Shape
     {
 
         private int _radius;
 
-        protected RangeShape(int radius)
+        protected Shape(int radius)
         {
             _radius = radius;
         }

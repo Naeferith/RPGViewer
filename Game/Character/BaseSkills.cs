@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Character
 {
-    public class BaseSkills
+    public class BaseSkills : IMutable<BaseSkills>
     {
         private int _charisma;
         private int _constitution;
@@ -40,6 +40,16 @@ namespace RPGViewer.Game.Character
                                 "\n> Intelligence : " + _intelligence +
                                 "\n> Spirit       : " + _spirit +
                                 "\n> Strength     : " + _strength;
+        }
+
+        public void Edit(BaseSkills deltaObject)
+        {
+            _charisma = deltaObject._charisma;
+            _constitution = deltaObject._constitution;
+            _dexterity = deltaObject._dexterity;
+            _intelligence = deltaObject._intelligence;
+            _spirit = deltaObject._spirit;
+            _strength = deltaObject._strength;
         }
     }
 }

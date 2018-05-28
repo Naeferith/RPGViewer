@@ -77,5 +77,15 @@ namespace RPGViewer.Game.Mathematics
             foreach (KeyValuePair<int, int> entry in _diceCombinaisons) sum += (entry.Key * entry.Value);
             return sum + _bonus;
         }
+
+        public override string ToString()
+        {
+            string buffer = "";
+            foreach (KeyValuePair<int, int> entry in _diceCombinaisons)
+            {
+                buffer += entry.Value + "d" + entry.Key + ", ";
+            }
+            return (_bonus == 0) ? buffer : buffer + "+ " + _bonus;
+        }
     }
 }

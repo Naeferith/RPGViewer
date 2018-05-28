@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGViewer.Game.Abilities.Range.Shape
+namespace RPGViewer.Game.Abilities.Range.Shapes
 {
-    public class BoxShape : RangeShape
+    public class Line : Shape
     {
-        public BoxShape(int radius) : base(radius)
+        public Line(int radius) : base(radius)
         {
         }
     }

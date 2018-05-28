@@ -6,41 +6,30 @@ using System.Threading.Tasks;
 
 namespace RPGViewer.Game.Effects
 {
-    public abstract class Effect : IEffect
+    public abstract class Effect
     {
-        public abstract event EventHandler TurnStarted;
-        public abstract event EventHandler TurnEnded;
-        public abstract event EventHandler TargetReached;
-        public abstract event EventHandler TargetMissed;
-
-        public abstract void OnTurnStarted(EffectEventArgs e);
-        public virtual void OnTurnEnded(EffectEventArgs e)
-        {
-            if (_nbTurn != -1)
-            {
-                _nbTurn--;
-                if (_nbTurn == 0) { /*Remove event from Caster evetlist*/}
-            }
-        }
-        public virtual EffectEventArgs OnTargetReached(EffectEventArgs e) => e;
-        public abstract void OnTargetMissed(EffectEventArgs e);
-
         /// <summary>
         /// An information about the <see cref="Effect"/> itself. It can be an amount of damage, a percentage etc.
         /// </summary>
-        protected double _value;
+        protected object _value;
 
         /// <summary>
-        /// How many turns left this <see cref="Effect"/> is active>
-        /// If an event is permanent, the value is -1;
+        /// How many turns left this <see cref="Effect"/> is active.
+        /// If an effect is permanent, the value is -1;
         /// </summary>
         private int _nbTurn;
 
-        protected Effect(double value, int nbTurns = -1)
+        
+        public int TurnsLeft { get => _nbTurn; set { _nbTurn = value; } }
+
+        public object Value { get => _value; set { _value = value; } }
+
+        protected Effect(object value, int nbTurns = -1)
         {
             _value = value;
             _nbTurn = nbTurns;
         }
+        
     }
 
     public enum Elements

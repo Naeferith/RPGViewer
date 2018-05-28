@@ -1,4 +1,4 @@
-﻿using RPGViewer.Game.Abilities.Range.Shape;
+﻿using RPGViewer.Game.Abilities.Range.Shapes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +17,9 @@ namespace RPGViewer.Game.Abilities.Range
         /// <summary>
         /// The area of effect of the <see cref="Ability"/>
         /// </summary>
-        private RangeShape _areaOfEffect;
+        private Shape _areaOfEffect;
 
-        protected Scope(int distance, RangeShape areaOfEffect)
+        protected Scope(int distance, Shape areaOfEffect)
         {
             _distance = distance;
             _areaOfEffect = areaOfEffect ?? throw new ArgumentNullException(nameof(areaOfEffect));

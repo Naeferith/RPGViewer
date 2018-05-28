@@ -11,7 +11,7 @@ namespace RPGViewer.Game.Character
     {
         private PlayerCharacter _master;
 
-        public Partner(string pseudo, CharacterRace race, int size, int weight, int hp, Defence defences, int initiative, int level, PlayerCharacter master) : base(pseudo, race, size, weight, hp, defences, level, initiative)
+        public Partner(string pseudo, CharacterRace race, int size, int weight, int hp, Dictionary<Defences, int> defences, int initiative, int level, PlayerCharacter master) : base(pseudo, race, size, weight, hp, defences, level, initiative)
         {
             _master = master;
         }

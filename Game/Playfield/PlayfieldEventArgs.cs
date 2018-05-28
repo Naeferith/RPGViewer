@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGViewer.Game.Effects
+namespace RPGViewer.Game.Playfield
 {
-    public class EffectEventArgs : EventArgs
+    public class PlayfieldEventArgs : EventArgs
     {
         public Mob Caster { get; set; }
         public Mob Target { get; set; }
         public int Damage { get; set; }
+        public Dictionary<Defences, int> Defences { get; set; }
     }
 }
